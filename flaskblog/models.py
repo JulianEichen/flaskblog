@@ -18,15 +18,17 @@ class User(db.Model, UserMixin):
     # If we look into the SQL-DB we don't see a post-column, but the db.relationship is a query that runs in the background
     posts = db.relationship('Post', backref='author', lazy=True) # Post references the Post-class
 
-    def get_reset_token(self, expires_sec=1800):
-        s=Serializer(app.config['SECRET_KEY'],expires_sec)
-        return s.dumps({'user_id':self.id}).decode('utf-8')
+    def get_reset_token(self):
+        # s = Serializer(app.config['SECRET_KEY'], expires_sec)
+        #return s.dumps({'user_id': self.id}).decode('utf-8')
+        s = Serializer(app.config['SECRET_KEY'])
+        return s.dumps({'user_id': self.id})
 
     @staticmethod
-    def verify_reset_token(token):
+    def verify_reset_token(token, expires_sec=1800):
         s=Serializer(app.config['SECRET_KEY'])
         try:
-            user_id=s.loads(token)['user_id']
+            user_id=s.loads(token, expires_sec)['user_id']
         except:
             return None
         return User.query.get(user_id)
