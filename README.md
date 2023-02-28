@@ -9,6 +9,21 @@ The app provides a basic multi user blog functionality, which includes:
 - pages for posts by specific users
 - user profiles, with name and image editing features
 
+## Understanding The App
+
+### Important Frameworks
+-Flask: main framework
+-Jinja2: template engine
+-Werkzeug: WSGI
+-SQLAlchemy: database framework
+-itsdangerous: creation and identification of unqiue tokens
+
+### Structure
+
+As can be seen in the package structure 
+
+
+
 
 
 
