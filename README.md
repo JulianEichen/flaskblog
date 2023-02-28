@@ -11,19 +11,18 @@ The app provides a basic multi user blog functionality, which includes:
 
 ## Understanding The App
 
-### Package Structure:
-The *static* folder is required by Flaks to store data, like profile pictures and CSS sheets. And *instance* contains the database. Except for the *run.py* file, all the Python and HTML code is packaged into the *flaskblog* folder. The package is broken down further into *errors*, *main*, *posts*, *templates* and *users*. While *errors*, *main*, *posts* and *users* contain *routes.py* and occasionally *forms.py*, *templates* gathers all the HTML-templates. 
+### Important Frameworks
+-Flask: main framework
+-Jinja2: template engine
+-Werkzeug: WSGI
+-SQLAlchemy: database framework
+-itsdangerous: creation and identification of unqiue tokens
+
+### Structure
+
+As can be seen in the package structure 
 
 
-### Database:
-A SQLite databse is used as the backbone for the web app and managed with the SQLAlchemy framework. There are only two tables used, 'User' and 'Post', which are connected by a one-to-many relationship. The specific rows, can be seen in the following diagram.
-
-![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/erdia.png?raw=true)
-
-### Templates:
-*Jinja2* 
-
-### Forms And Routes:
 
 
 
