@@ -12,11 +12,11 @@ The app provides a basic multi user blog functionality, which includes:
 ## Understanding The App
 
 ### Important Frameworks
--Flask: main framework
--Jinja2: template engine
--Werkzeug: WSGI
--SQLAlchemy: database framework
--itsdangerous: creation and identification of unqiue tokens
+- Flask: main framework
+- Jinja2: template engine
+- Werkzeug: WSGI
+- SQLAlchemy: database framework
+- itsdangerous: creation and identification of unqiue tokens
 
 ### Structure
 
