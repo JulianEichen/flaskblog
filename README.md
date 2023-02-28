@@ -20,7 +20,7 @@ The app provides a basic multi user blog functionality, which includes:
 
 ### Structure
 
-As can be seen in the package structure 
+As can be seen in the [package structure](https://julianeichen.github.io/flaskblogtree)
 
 
 
