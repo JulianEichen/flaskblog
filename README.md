@@ -28,8 +28,22 @@ A SQLite databse is used to handle the *User* and *Post* models. It's made up of
 
 ![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/erdia.png?raw=true)
 
+## Usage
 
+### Running The App Locally
 
+Assuming we are using Linux and Python 3.10+ is installed, we can use the following commands in a terminal to download the repository, install the requirements and run the app. 
+
+```
+git clone https://github.com/JulianEichen/flaskblog
+cd flaskblog
+pip install -r requirements.txt
+python3 run.py
+```
+
+We can then access the app in a browser under [http://localhost:5000/](http://localhost:5000/)
+
+### Navigation
 
 
 
