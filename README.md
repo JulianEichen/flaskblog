@@ -45,7 +45,11 @@ We can then access the app in a browser under [http://localhost:5000/](http://lo
 
 ### Navigation
 
+Navigation happens primarily through the navigation bar, which comes in specific shapes for a logged in or logged out user:
 
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/default.png?raw=true)
+
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/default.png?raw=true)
 
 
 
