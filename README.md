@@ -47,9 +47,30 @@ We can then access the app in a browser under [http://localhost:5000/](http://lo
 
 Navigation happens primarily through the navigation bar, which comes in specific shapes for a logged in or logged out user:
 
-![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/default.png?raw=true)
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_navbar_in.png?raw=true)
 
-![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/default.png?raw=true)
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_navbar_out.png?raw=true)
 
+### Registration, Login And Password Reset
 
+The following forms should be self explanatory. Note that the reset happens via email.
 
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_register.png?raw=true)
+
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_login.png?raw=true)
+
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_reset.png?raw=true)
+
+### Account Page
+The *Account* page shows the user defining information *Username* and *email* and also the profile picture. All three can be changed by putting in new data into the form and clicking the *Update* button or simply uploading a new picture. 
+
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_account.png?raw=true)
+
+### Posts
+We have a simple form to create new posts. And a page for each single post, which gives the creater of the post the option to edit the post, if they are logged in.
+
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_post_new.png?raw=true)
+
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_post_in.png?raw=true)
+
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_post_out.png?raw=true)
