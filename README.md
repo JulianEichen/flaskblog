@@ -75,6 +75,6 @@ We have a simple form to create new posts. And a page for each single post, whic
 
 ![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_post_in.png?raw=true)
 
-**General view accessible by every user:**
+**General view accessible to every user:**
 
 ![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_post_out.png?raw=true)
