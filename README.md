@@ -53,9 +53,11 @@ Navigation happens primarily through the navigation bar, which comes in specific
 The most important page is the home page, where all the posts are show, ordered from most recent to oldest. The amount of posts are set to 5 posts per page and a user can browse through the pages with buttons at the bottom of the home page. 
 
 **Top of the page:**
+
 ![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_home1.png?raw=true)
 
 **Bottom of the page:**
+
 ![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_home1.png?raw=true)
 
 ### Registration, Login And Password Reset
