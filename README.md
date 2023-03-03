@@ -48,6 +48,16 @@ Navigation happens primarily through the navigation bar, which comes in specific
 ![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_navbar_in.png?raw=true)
 
 ![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_navbar_out.png?raw=true)
+
+### Home Page
+The most important page is the home page, where all the posts are show, ordered from most recent to oldest. The amount of posts are set to 5 posts per page and a user can browse through the pages with buttons at the bottom of the home page. 
+
+**Top of the page:**
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_home1.png?raw=true)
+
+**Bottom of the page:**
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_home1.png?raw=true)
+
 ### Registration, Login And Password Reset
 
 The following forms should be self explanatory. Note that the reset happens via email.
@@ -75,3 +85,5 @@ We have a simple form to create new posts. And a page for each single post, whic
 **General view accessible to every user:**
 
 ![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_post_out.png?raw=true)
+
+
