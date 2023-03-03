@@ -58,7 +58,7 @@ The most important page is the home page, where all the posts are show, ordered 
 
 **Bottom of the page:**
 
-![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_home1.png?raw=true)
+![alt text](https://github.com/JulianEichen/flaskblog/blob/main/pictures/fl_home2.png?raw=true)
 
 ### Registration, Login And Password Reset
 
