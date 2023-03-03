@@ -31,16 +31,23 @@ A SQLite database is used to handle the User and Post models. It's made up of th
 ### Usage
 #### Running The App Locally
 
-Assuming we are using Linux and Python 3.10+ is installed, we can use the following commands in a terminal to download the repository, install the requirements and run the app.
+Assuming we are using Linux and Python 3.10+ is installed, we can use the following commands in a terminal to download the repository, install the dependencies.
 
 ```
 git clone https://github.com/JulianEichen/flaskblog
 cd flaskblog
 pip install -r requirements.txt
-python3 run.py
 ```
 
-We can then access the app in a browser under http://localhost:5000/
+Now we have to set up the database uri und key. We can either set them directly in the config file or use environment variables. 
+Set up of flask_mail is slightly more complicated. In it's current state, the app is set up to be used with a gmail account. The username and password are stored as environmental variables, but could also be set in the config file. <br>
+Note that the gmail account has to be [set up](https://www.youtube.com/watch?v=Jp9B0rY6Fxk) for this use.
+
+When we are done setting up the database and mail configurations, we can 
+```
+python3 run.py
+```
+and access the app in a browser under http://localhost:5000/
 ### Navigation
 
 Navigation happens primarily through the navigation bar, which comes in specific shapes for a logged in or logged out user:
