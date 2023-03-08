@@ -26,3 +26,13 @@ def test_new_user_fixture(new_user):
     assert new_user.username == 'bob'
     assert new_user.email == 'bob@bob.bob'
     assert new_user.password == '123'
+
+def test_new_post_fixture(new_post):
+    '''
+    GIVEN a Post model
+    WHEN a new Post is created
+    THEN check email, password and username
+    '''
+    assert new_post.title == 'titletitle'
+    assert new_post.content == 'contentcontent'
+
