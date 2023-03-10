@@ -10,3 +10,4 @@ class Config:
     MAIL_USERNAME = os.environ.get('GM_USER')
     MAIL_PASSWORD = os.environ.get('GM_PASS')
     TESTING= True
+    WTF_CSRF_ENABLED = False

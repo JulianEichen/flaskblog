@@ -46,3 +46,4 @@ def test_about_page_post_fixture(test_client):
     response=test_client.post('/about')
     assert response.status_code == 405
     assert b"About Page!" not in response.data
+

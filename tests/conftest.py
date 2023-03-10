@@ -18,32 +18,41 @@ def new_post():
 @pytest.fixture(scope='session')
 def app():
     app=create_app(Config)
-    '''
-    app.config.update({
-        "TESTING": True,
-    })
-    '''
-    
+ 
     # other setup can go here
-    from flaskblog.models import User, Post
-    with app.app_context():
-        db.create_all
-        user=User(username='testuser',email='test@aol.com',password='123')
-   
-        db.session.add(user)
-        db.session.commit()
-
+ 
     yield app
 
     # clean up / reset resources here
-    with app.app_context():
-        db.drop_all()
+   
 
-
-@pytest.fixture()
+@pytest.fixture(scope='module')
 def test_client(app):
-    return app.test_client()
+    # create client 
+    with app.test_client() as testing_client:
+        # establish app context
+        with app.app_context():
+            yield app.test_client()
 
-@pytest.fixture()
+@pytest.fixture(scope='module')
+def init_database(test_client):
+    # create database and the database table
+    from flaskblog.models import User, Post
+    db.create_all()
+    
+    # insert data
+    user1 = User(username='test1user1',email='test1@aol1.com1',password='123')
+    user2 = User(username='test2user2',email='test2@aol2.com2',password='123')
+    db.session.add(user1)
+    db.session.add(user2)
+
+    # commit changes
+    db.session.commit()
+
+    yield
+
+    db.drop_all()
+
+@pytest.fixture(scope='module')
 def runner(app):
     return app.test_cli_runner()
