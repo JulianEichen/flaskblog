@@ -1,11 +1,12 @@
 from flaskblog.models import User, Post 
 
+'''
 def test_new_user():
-    '''
+    
     GIVEN a User model
     WHEN a new User is created
     THEN check email, password and username
-    '''
+
 
     t_username='bob'
     t_email='bob@bob.bob'
@@ -16,6 +17,7 @@ def test_new_user():
     assert user.username == t_username
     assert user.email == t_email
     assert user.password == t_password
+'''
 
 def test_new_user_fixture(new_user):
     '''
