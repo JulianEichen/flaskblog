@@ -1,3 +1,5 @@
+import os
+from PIL import Image
 from flask import session, url_for
 from flaskblog.models import User
 
@@ -174,5 +176,20 @@ def test_account_page_logged_out(test_client, init_database):
     assert response.status_code == 200
     assert b"Account Info" not in response.data
     assert b"Please log in to access this page." in response.data
+
+def test_account_page_image_upload(test_client, init_database, login_default_user):
+    '''
+    GIVEN app configured for testing
+    WHEN the '/accoubt' page is posted to (POST) with a new profile picture
+    THEN check that the response is valid
+    '''
+    
+    im_name="funnyfrog.jpg"
+    dir = os.path.dirname(__file__)
+    im_path = os.path.join(dir,im_name)
+
+    data={'image': (open(im_path, 'rb'), im_name)}
+    response =test_client.post('/account', data=data)
+    assert response.status_code == 200
 
     
