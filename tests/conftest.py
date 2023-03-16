@@ -27,16 +27,12 @@ def app():
 
     # clean up / reset resources here
 
-
-
 @pytest.fixture(scope='module')
 def test_client(app):
     
     with app.test_client() as testing_client:
         with app.app_context():
             yield testing_client
-    
-
 
 @pytest.fixture(scope='module')
 def init_database(test_client):
@@ -69,7 +65,6 @@ def login_default_user(test_client):
     yield
 
     test_client.get('/logout', follow_redirects=True)
-
 
 @pytest.fixture(scope='module')
 def runner(app):

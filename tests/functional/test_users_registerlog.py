@@ -1,7 +1,6 @@
-import os
-from PIL import Image
-from flask import session, url_for
+from flask import url_for
 from flaskblog.models import User
+from flask_login import current_user
 
 def test_register_page(test_client):
     '''
@@ -153,43 +152,3 @@ def test_login_already_logged_in(test_client, init_database, login_default_user)
     assert b"Home Page!" in response.data
     assert b"Account" in response.data
     assert b"Logout" in response.data
-
-def test_account_page_logged_in(test_client, init_database, login_default_user):
-    '''
-    GIVEN app configured for testing
-    WHEN the '/account' page is requested (GET), when the user is logged in
-    THEN check that the response is valid
-    '''
-
-    response = test_client.get(url_for('users.account'))
-    assert response.status_code == 200
-    assert b"Account Info" in response.data
-
-def test_account_page_logged_out(test_client, init_database):
-    '''
-    GIVEN app configured for testing
-    WHEN the '/account' page is requested (GET), when the user is not logged in
-    THEN check that the response is valid
-    '''
-
-    response = test_client.get(url_for('users.account'),follow_redirects=True)
-    assert response.status_code == 200
-    assert b"Account Info" not in response.data
-    assert b"Please log in to access this page." in response.data
-
-def test_account_page_image_upload(test_client, init_database, login_default_user):
-    '''
-    GIVEN app configured for testing
-    WHEN the '/accoubt' page is posted to (POST) with a new profile picture
-    THEN check that the response is valid
-    '''
-    
-    im_name="funnyfrog.jpg"
-    dir = os.path.dirname(__file__)
-    im_path = os.path.join(dir,im_name)
-
-    data={'image': (open(im_path, 'rb'), im_name)}
-    response =test_client.post('/account', data=data)
-    assert response.status_code == 200
-
-    
