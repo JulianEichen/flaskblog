@@ -24,6 +24,9 @@ The app provides a basic multi user blog functionality, which includes:
 ### Structure
 
 The package [structure](https://julianeichen.github.io/flaskblogtree) is chosen according to the flask specifications. In the first layer we can see *run.py* and the *instance*, *flaskblog* and *tests* subdirectories. Instance contains the database, described below. tests contains all the tests and related files, divided into functional and unit tests. The run file creates and runs an app object. Configuration of said object is specified in the *init.py* and *config.py* files in the first layer of the flaskblog subdirectory. In this layer we also have a *models.py* file to define the *User* and *Post* classes, which describe most of the persistent data. The rest of the layer is made up of 3 kinds of subdirectories. The first one is *templates*, which contains all the html templates. *static* contains static data like the *main.css* file and persistent data that isn't directly handled by the database, like the profile pictures in our case. The last type is made up of *errors*, *main*, *posts* and *users*. These directories are named after the part of the business logic they are related to. Each directory contains an empty *init.py* according to generic Python package structure and also a *routes.py* file (or *handlers.py* in the case of errors). Here a specific *Blueprint* object gets initialized and equipped with route functions to handle whatever request can be made during the apps existence. The Blueprint class is part of the flask framework and used to extend instances of app objects (see the main init file in layer 2).
+
+README.md, Testing.md and the *pictures* directory are for demonstration purpose and not directly related to the actual code. 
+
 ### Database
 
 A SQLite database is used to handle the User and Post models. It's made up of the following tables, which are related by a one-to-many relationship (One user -> many posts):
