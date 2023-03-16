@@ -109,3 +109,7 @@ python3 -m pytest
 ```
 
 Pytest will then search the project directory for files which start with the word 'test' and within those files find all functions which start with the word test. It will also run the *conftest.py* file which defines fixtures and other test setup related code. 
+
+### Testing Setup
+
+With *pytest* we'll have most of the setup done in *conftest.py*, such as creating a testing client and database. The client is created through the use of the *create_app(Config)* facotry with a specific testing config file. One important detail is that, since some of the pages are only visible to logged in users, we need to set WTF_CSRF_ENABLED=False.
