@@ -59,7 +59,7 @@ def test_account_page_page_valid_image_update(test_client, init_database, login_
 def test_account_page_page_invalid_image_update(test_client, init_database, login_default_user):
     '''
     GIVEN app configured for testing
-    WHEN the '/account' page is posted to (POST) with a new profile picture file
+    WHEN the '/account' page is posted to (POST) with a new profile picture file of an invalid type
     THEN check that the response is valid
     '''
     user_img_path=os.path.join(current_app.root_path,'static/profile_pics',current_user.image_file)
@@ -107,7 +107,7 @@ def test_account_page_valid_name_update(test_client, init_database, login_defaul
 def test_account_page_valid_email_update(test_client, init_database, login_default_user):
     '''
     GIVEN app configured for testing
-    WHEN the '/account' page is posted to (POST) with a new valid username
+    WHEN the '/account' page is posted to (POST) with a new valid email
     THEN check that the response is valid
     '''
     old_email=current_user.email
