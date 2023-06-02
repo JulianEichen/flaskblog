@@ -62,20 +62,20 @@ def test_account_page_page_invalid_image_update(test_client, init_database, logi
     WHEN the '/account' page is posted to (POST) with a new profile picture file of an invalid type
     THEN check that the response is valid
     '''
-    user_img_path=os.path.join(current_app.root_path,'static/profile_pics',current_user.image_file)
+    user_img_path = os.path.join(current_app.root_path, 'static/profile_pics',current_user.image_file)
     with Image.open(user_img_path) as img:
-        old_img=img.resize([128,128]).getdata()
+        old_img = img.resize([128, 128]).getdata()
 
     # upload new file
-    new_img_name="funnyfrog.gif"
+    new_img_name = "funnyfrog.gif"
     dir = os.path.dirname(__file__)
-    new_im_path = os.path.join(dir,new_img_name)
+    new_im_path = os.path.join(dir, new_img_name)
 
     data={'picture': (open(new_im_path, 'rb'), new_img_name),
           'email': current_user.email,
           'username':current_user.username}
     
-    response =test_client.post('/account',
+    response = test_client.post('/account',
                                data=data,
                                follow_redirects=True)
     

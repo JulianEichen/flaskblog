@@ -14,6 +14,7 @@ login_manager.login_message_category = 'info'
 
 mail = Mail()
 
+
 def create_app(config_class=Config, test_config=None):
     app = Flask(__name__)
 

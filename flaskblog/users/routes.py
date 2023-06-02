@@ -6,7 +6,8 @@ from flaskblog.users.forms import (RegistrationForm, LoginForm, UpdateAccountFor
                              RequestResetForm, ResetPasswordForm)
 from flaskblog.users.utils import save_picture, send_reset_email
 
-users=Blueprint('users', __name__)
+users = Blueprint('users', __name__)
+
 
 @users.route("/register", methods=['GET', 'POST'])
 def register():
@@ -18,7 +19,7 @@ def register():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
     form = RegistrationForm()
-    
+ 
     if form.validate_on_submit():
         print("SUBMIT")
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
